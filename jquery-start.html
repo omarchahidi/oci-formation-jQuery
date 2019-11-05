@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jquery start</title>
+    <!-- Ajout de bootstrap pour que la page soit jolie -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <h1>Hello</h1>
+    <h1>Halo</h1>
+    <h1>Hola</h1>
+    <h1>Bonjour</h1>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+    <!-- Scripts js DOM en utilisant la biblio jquery -->
+    <script>
+        // $ = variable jquery
+        // console.log($(document));
+        $(document).ready(function() {
+            // creation un ojet jquery pour travailler sur me titre h1
+            // -- TEST 1 -- Cacher et aficher
+            // $("h1").text("Bonjour");
+
+            // -- TEST 2 -- Cacher et aficher
+            // $("h1").hide(1500).text("Bonjour").show(1500);
+
+            // -- TEST 3 -- Cacher, aficher et Changer le text           
+            /*
+            $("h1")
+                .hide(1500, function() {
+                console.log("Fin de hide");
+                $(this).text("Bonjour");
+            }).show(1500);
+            */
+
+            // -- TEST 4 -- Cacher, aficher et Changer le text
+            /*
+            var $h1 = $("h1");
+            // alert($h1);
+            var pos = 0;
+            $h1.hide(1500, function() {
+                console.log("Fin de hide");
+                // alert(this);
+                $(this).text(
+                    function(index, oldValue) {
+                        pos++;
+                        return `${pos} Bonjour (${oldValue})`; // Alt + ALTGr + 7
+                    });
+            }).show(1500);
+            */
+            
+            // -- TEST 5 -- Cacher, aficher et Changer le text + mettre en rouge le 2eme titre
+            var $h1 = $("h1");
+            // alert($h1);
+            var pos = 0;
+            $h1.hide(1500, function() {
+                console.log("Fin de hide");
+                // alert(this);
+                $(this).text(
+                    function(index, oldValue) {
+                        pos++;
+                        return `${pos} Bonjour (${oldValue})`; // Alt + ALTGr + 7
+                    });
+            }).show(1500);
+                // mettre en rouge le 2eme titre -- jQuery-intro.pdf page 16
+            // $h1.eq(1).css("color", "red");
+            $h1.eq(1).css("color", "red")
+                        .attr("lang", "de")
+                        .addClass("alert").addClass("alert-danger");
+            
+            
+            // -- TEST 6 -- Gestionaure événement
+            
+            
+            
+
+        });
+    </script>
+</body>
+
+</html>

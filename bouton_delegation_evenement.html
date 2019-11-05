@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion des événement</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <button class="btn btn-primary m-4">Cliquez mois</button>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // jQuery-intro.pdf -- page 26 - Gestion des événement
+            /*
+            var $bt1 = $("button");
+            $bt1.click(function(event) {
+                $(this).css("color", "red");
+                $(this).text("ok");
+            });
+            */
+            
+            var nbClick = 0;
+            $("button").click(function(){
+                nbClick++;
+                var message="Je suis cliqué";
+                if(nbClick >3 ){
+                     message = "Foutez moi la pais";
+                    $(this).attr("disabled", "disabled");
+                }
+                // $(this).text("Je suis cliqué").removeClass("btn-primary").addClass("btn-success");
+                $(this).text(message).removeClass("btn-primary").addClass("btn-success");
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    
+    <style>
+        #menu a {
+            cursor: pointer;
+        }
+        
+        .open {
+            background-color:black;
+            color: red !important;
+        }
+    </style>
+</head>
+
+<body class="contrainer-fluid">
+    <ul id="menu">
+        <li><a href="#">Fruits</a>
+            <ul>
+                <li>Orange</li>
+                <li>Pommes</li>
+                <li>Poires</li>
+            </ul>
+        </li>
+        <li><a href="#">Légumes</a>
+            <ul>
+                <li><a href="#">Racines</a>
+                    <ul>
+                        <li><a href="#">Carrotes</a>
+                            <ul>
+                                <li>Orange</li>
+                                <li>jaunes</li>
+                                <li>blanches</li>
+                                <li>noires</li>
+                            </ul>
+                        </li>
+                        <li>Panais</li>
+                        <li>Pommes de terres</li>
+                    </ul>
+                </li>
+                <li><a href="#">Feuilles</a>
+                    <ul>
+                        <li>Choux</li>
+                        <li>Salade</li>
+                        <li>Blette</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#">Légumineuses</a>
+            <ul>
+                <li>pois chiche</li>
+                <li>Fèves</li>
+            </ul>
+        </li>
+        <li><a href="#">Huiles</a>
+            <ul>
+                <li>Noix</li>
+                <li>Olive</li>
+                <li>Colza</li>
+            </ul>
+        </li>
+    </ul>
+
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("ul").not("#menu").hide();
+            
+            $("#menu a").click(function(){
+                $(this).next("ul").toggle(250);
+                $(this).toggleClass("open");
+            });
+     
+        });
+    </script>
+
+</body>
+
+</html>

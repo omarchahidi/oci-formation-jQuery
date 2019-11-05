@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Paragraphe dynamique</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        h2 {
+            cursor: pointer;
+        }
+        
+        .open {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="p-4">
+    <h2>Premier titre</h2>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum qui at cumque officiis ullam iure quo quidem ratione esse ex. Id vero distinctio reprehenderit accusantium itaque voluptatum atque? Tenetur, illo.
+    </p>
+    <h2>Deuxième titre</h2>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab sequi ipsum molestiae voluptatem cupiditate, unde recusandae nisi temporibus consectetur! Magnam corporis ipsam aliquid laudantium facere quasi quod, dignissimos dolorum tempora.
+    </p>
+    <h2>Troixième titre</h2>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit iure, maiores quo omnis delectus quidem qui excepturi, fuga ipsum! Ad, nulla? Minima ipsam magnam facilis nam. Perferendis hic nulla excepturi!
+    </p>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+
+    <script>
+        /*
+        $(document).ready(function() {
+            // Menu acordéant: tpis les praragraphes cachés et 
+            // puis afficher le paragraphe du titre séléctionné
+            $titresH2 = $("h2");
+            $paragraphes = $("p");
+            $paragraphes.hide();
+            // Gestionaire d'événement de h2 
+            $titresH2.click(function() {
+                // méthode
+                $paragraphes.hide(200);
+                $(this).next("p").toggle(500);
+            });
+        });
+        */
+
+        $(document).ready(function() {
+            // Menu acordéant: tpis les praragraphes cachés et 
+            // puis afficher le paragraphe du titre séléctionné
+            $titresH2 = $("h2");
+            $paragraphes = $("p");
+            
+            $paragraphes.hide();
+           
+            $titresH2.click(function() {
+                $paragraphes.hide(200);
+                $titresH2.removeClass("open");
+                $(this).next("p").toggle(500);
+                $(this).toggleClass("open");
+                
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
